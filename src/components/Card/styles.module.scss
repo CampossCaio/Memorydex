@@ -1,0 +1,71 @@
+.flipper {
+  /* define a velocidade da transição */ 	
+  transition: 0.4s;  	
+  transform-style: preserve-3d;    	
+  position: relative;
+  perspective: 1000;
+ 
+  &.flipped {
+    transform: rotateY(180deg);
+    pointer-events: none;
+  }
+
+  @media (max-width: 400px) {
+   
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18.75rem;
+  max-width: 12.5rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  border: 2px solid var(--black-800);
+  padding: 1.25rem;;
+  background: var(--black-800);
+  color: white;
+  transition: all 0.2s ease;
+  transition: all 0.5s ease;
+  
+  &.memorized {
+    visibility: hidden;
+    opacity: 0.2;
+  }
+
+  &:hover {
+    border-color: var(--green);
+  }
+
+  @media (max-width: 400px) {
+   
+  }
+}
+
+.content {
+  border: 2px solid var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+
+  img {
+    height: 6.25rem;
+  }
+}
+
+.back, .front {
+  backface-visibility: hidden;    	
+  position: absolute;  	 	
+}
+
+.front {
+  z-index: 2;
+}
+
+.back { transform: rotateY(180deg); }
