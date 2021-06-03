@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  max-width: 1080px;
+  height: 100vh;
+  margin: auto;
+  padding: 40px 20px;
+  background: url('../../assets/background.png') no-repeat 70% 110% #121214 fixed;
+
+  
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.625rem;
+    margin-top: 1.25rem;
+
+    @media (max-width: 450px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
