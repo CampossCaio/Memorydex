@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+
+  span {
+    color: var(--white);
+    font-family: "Roboto";
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 450px) {
+    padding-bottom: 3rem;
+  }
+}
