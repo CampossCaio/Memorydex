@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  section {
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      height: 9.375rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-family: 'Roboto' sans-serif;
+      color: var(--white);
+    }
+
+    span {
+      margin-top: 0.625rem;
+      font-size: 1.125rem;
+      font-family: 'Roboto' sans-serif;
+      color: var(--white);
+    }
+
+    p {
+      display: inline;
+      color: var(--purple);
+      font-weight: bold;
+    }
+
+    &:last-child {
+      justify-content: space-between;
+      flex-direction: row;
+      margin-top: 1.875rem;
+      margin-bottom: 10px;
+
+      button {
+        padding: 10px;
+        border: 2px solid var(--purple);
+        border-radius: 4px;
+        background: none;
+        color: var(--white);
+
+        &:hover {
+          filter: brightness(0.8);
+        }
+      }
+    }
+  }
+}
