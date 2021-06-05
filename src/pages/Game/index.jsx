@@ -5,18 +5,28 @@ import { cards } from '../../cards';
 import { container, cardsContainer } from './styles.module.scss'; 
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import { GameFinishModal } from '../../components/GameFinishModal';
 
-function Game() {
+export function Game() {
 
   const [ flippedCards, setFlippedCards ] = useState([]); 
   const [ memorizedCards, setMemorizedCards ] = useState([]); 
+  const [ modalIsOpen, setIsOpen ] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+    window.location.reload();
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   function checkIfTheGameIsFinished() {
     if(memorizedCards.length === (cards.length)) {
       setFlippedCards([]);
       setMemorizedCards([]);
-      window.location.reload();
-      return alert("Meus parabéns, você capturou todos os pokemons!");
+      openModal();
     }
   }
 
@@ -51,24 +61,26 @@ function Game() {
   }
 
   return (
-    <div className={container}>
-      <Header/>
-      <div className={cardsContainer}>
-        {
-          cards.map((card) => (
-            <Card 
-              key={card.id} 
-              card={card} 
-              handleFlipCard={handleFlipCard} 
-              isFlipped={verifyIfIsFlipped(card.id)}
-              isMemorized={verifyIfIsMemorized(card.id)}
-            />
-          ))
-        }
+    <>
+      <GameFinishModal isOpen={modalIsOpen} closeModal={closeModal}/>
+      <div className={container}>
+        <Header/>
+        <div className={cardsContainer}>
+          {
+            cards.map((card) => (
+              <Card 
+                key={card.id} 
+                card={card} 
+                handleFlipCard={handleFlipCard} 
+                isFlipped={verifyIfIsFlipped(card.id)}
+                isMemorized={verifyIfIsMemorized(card.id)}
+              />
+            ))
+          }
+        </div>
+        <Footer/>
       </div>
-      <Footer/>
-    </div>
+    </>
   );
 }
 
-export default Game;
