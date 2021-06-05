@@ -1,11 +1,11 @@
-import Game from './pages/Game';
 import '../src/styles/global.scss';
 
+import Routes from './routes';
+
 function App() {
+ 
   return (
-    <>
-      <Game/>
-    </>
+    <Routes/>
   );
 }
 
