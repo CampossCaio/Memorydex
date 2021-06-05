@@ -13,7 +13,7 @@ export function Home() {
      <div>
        <h1>Seja bem vindo, <span>treinador(a)!</span></h1>
        <p>
-         Alguns pokemons se perderam de seus teinadores.
+         Alguns pokemons se perderam de seus treinadores.
          Precisamos  de sua ajuda para encontra-los.<br/>
          <span> Aceita o desafio</span>?
        </p>
