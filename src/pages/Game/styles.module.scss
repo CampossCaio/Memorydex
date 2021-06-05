@@ -1,12 +1,18 @@
 .container {
   width: 100%;
   max-width: 1080px;
-  height: 100vh;
+  height: 100%;
   margin: auto;
   padding: 40px 20px;
-  background: url('../../assets/background.png') no-repeat 70% 110% #121214 fixed;
+  //background: url('../../assets/background.png') no-repeat 70% 110% #121214 ;
+  background-image: url('../../assets/background.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color:  #121214;
+  background-position: center;
+  background-attachment: fixed;
 
-  
+
   .cardsContainer {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
