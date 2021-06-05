@@ -22,8 +22,10 @@
   }
 
   @media (max-width: 400px) {
-    img {
-      height: 40px;
+    justify-content: center;
+
+    button {
+      display: none;
     }
   }
 }
